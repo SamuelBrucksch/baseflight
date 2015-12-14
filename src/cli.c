@@ -64,7 +64,7 @@ static const char *const featureNames[] = {
     "PPM", "VBAT", "INFLIGHT_ACC_CAL", "SERIALRX", "MOTOR_STOP",
     "SERVO_TILT", "SOFTSERIAL", "LED_RING", "GPS",
     "FAILSAFE", "SONAR", "TELEMETRY", "POWERMETER", "VARIO", "3D",
-    "FW_FAILSAFE_RTH", "SYNCPWM", "FASTPWM",
+    "FW_FAILSAFE_RTH", "SYNCPWM", "FASTPWM", "LIGHTTELEMETRY",
     NULL
 };
 
@@ -155,6 +155,8 @@ const clivalue_t valueTable[] = {
     { "softserial_baudrate", VAR_UINT32, &mcfg.softserial_baudrate, 1200, 19200 },
     { "softserial_1_inverted", VAR_UINT8, &mcfg.softserial_1_inverted, 0, 1 },
     { "softserial_2_inverted", VAR_UINT8, &mcfg.softserial_2_inverted, 0, 1 },
+    { "lighttelemetry_baudrate", VAR_UINT32, &mcfg.lighttelemetry_baudrate, 1200, 115200 },
+    { "lighttelemetry_port", VAR_UINT8, &mcfg.lighttelemetry_port, 0, TELEMETRY_PORT_MAX },
     { "gps_type", VAR_UINT8, &mcfg.gps_type, 0, GPS_HARDWARE_MAX },
     { "gps_baudrate", VAR_INT8, &mcfg.gps_baudrate, 0, GPS_BAUD_MAX },
     { "gps_ubx_sbas", VAR_INT8, &mcfg.gps_ubx_sbas, -1, 4 },

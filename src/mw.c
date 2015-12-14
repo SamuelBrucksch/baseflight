@@ -204,6 +204,9 @@ void annexCode(void)
 #ifndef CJMCU
         checkTelemetryState();
 #endif
+// This will switch baudrates from serial_baudrate to lighttelemetry_baudrate.
+		if (feature(FEATURE_LIGHTTELEMETRY))
+			updateLightTelemetryState();
     }
 
 #ifdef LEDRING

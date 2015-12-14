@@ -242,6 +242,9 @@ int main(void)
         initTelemetry();
 #endif
 
+    if (feature(FEATURE_LIGHTTELEMETRY))
+        initLightTelemetry();
+
     previousTime = micros();
     if (mcfg.mixerConfiguration == MULTITYPE_GIMBAL)
         calibratingA = CALIBRATING_ACC_CYCLES;

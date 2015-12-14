@@ -925,5 +925,8 @@ void serialCom(void)
                 currentPortState->c_state = IDLE;
             }
         }
+	if (!cliMode && feature(FEATURE_LIGHTTELEMETRY)) { // The first condition should never evaluate to true but I'm putting it here anyway - silpstream
+        	sendLightTelemetry();
+	}
     }
 }

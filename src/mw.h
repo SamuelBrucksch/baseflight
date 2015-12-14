@@ -383,6 +383,10 @@ typedef struct master_t {
     uint8_t telemetry_provider;             // See TelemetryProvider enum.
     uint8_t telemetry_port;                 // See TelemetryPort enum.
     uint8_t telemetry_switch;               // Use aux channel to change serial output & baudrate( MSP / Telemetry ). It disables automatic switching to Telemetry when armed.
+
+    uint32_t lighttelemetry_baudrate;      //only used for hardware serial
+    uint8_t  lighttelemetry_port;    
+
     config_t profile[3];                    // 3 separate profiles
     uint8_t current_profile;                // currently loaded profile
     uint8_t reboot_character;               // which byte is used to reboot. Default 'R', could be changed carefully to something else.
@@ -397,6 +401,7 @@ typedef struct core_t {
     serialPort_t *flexport;
     serialPort_t *gpsport;
     serialPort_t *telemport;
+    serialPort_t *lighttelemport;
     serialPort_t *rcvrport;
     uint8_t numRCChannels;                  // number of rc channels as reported by current input driver
     bool useServo;                          // feature SERVO_TILT or wing/airplane mixers will enable this
@@ -604,3 +609,6 @@ void GPS_set_next_wp(int32_t *lat, int32_t *lon);
 int32_t wrap_18000(int32_t error);
 void fw_nav(void);
 
+void initLightTelemetry(void);
+void sendLightTelemetry(void);
+void updateLightTelemetryState(void);
