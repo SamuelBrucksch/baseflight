@@ -1,3 +1,8 @@
+# Changes
+
+This is the LTM enabled version of Patrik Emilsson's fixed wing nav:
+http://fotoflygarn.blogspot.de/2015/01/baseflight-fixedwing.html
+
 # Baseflight
 
 Baseflight is a 32 bit fork of the MultiWii RC flight controller firmware (http://www.multiwii.com).
