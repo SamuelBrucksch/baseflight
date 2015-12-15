@@ -250,7 +250,7 @@ static void resetConf(void)
     mcfg.softserial_1_inverted = 0;
     mcfg.softserial_2_inverted = 0;
     // lighttelemetry baudrate
-    mcfg.lighttelemetry_baudrate = 9600;
+    mcfg.lighttelemetry_baudrate = 2400;
     mcfg.lighttelemetry_port = TELEMETRY_PORT_UART;
     mcfg.looptime = 3500;
     mcfg.emf_avoidance = 0;
